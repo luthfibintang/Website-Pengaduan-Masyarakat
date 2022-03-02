@@ -1,0 +1,21 @@
+/**
+ *
+ * You can write your CSS code here, DO NOT touch the default JavaScript file
+ * because it will make it harder for you to update.
+ * 
+ */
+
+ .selecturgent-input {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0; }
+
+.selecturgent-input:checked + .selectgroup-button {
+    background-color: #FC544B;
+    color: #fff;
+    z-index: 1; }
+
+
+/*# sourceMappingURL=custom.css.map */
