@@ -26,7 +26,7 @@
         <form action="<?= base_url('') ?>/pengaduan/tulis" method="post" enctype="multipart/form-data">
             <?= csrf_field() ?>
             <div class="mb-3">
-                <div class="form-floating">
+                <div class="form-group">
                     <label for="floatingTextarea2">Judul</label>
                     <input type="text" name="judul" class="form-control <?= ($validation->hasError('judul'))? 'is-invalid' : ''; ?>" placeholder="" value="<?= old('judul'); ?>" id="judul"></input>
                     <div class="invalid-feedback">
@@ -35,11 +35,20 @@
                 </div>
             </div>
             <div class="mb-3">
-                <div class="form-floating">
+                <div class="form-group">
                     <label for="floatingTextarea2">Isi laporan</label>
                     <textarea name="isi_laporan" class="form-control <?= ($validation->hasError('isi_laporan'))? 'is-invalid' : ''; ?>" placeholder="" value="<?= old('isi_laporan'); ?>" id="floatingTextarea2" style="height: 100px"></textarea>
                     <div class="invalid-feedback">
                       <?= $validation->getError('isi_laporan'); ?>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="form-group">
+                    <label for="floatingTextarea2">Lokasi Pengaduan</label>
+                    <input type="text" name="lokasi" class="form-control <?= ($validation->hasError('lokasi'))? 'is-invalid' : ''; ?>" placeholder="" value="<?= old('lokasi'); ?>" id="judul"></input>
+                    <div class="invalid-feedback">
+                      <?= $validation->getError('lokasi'); ?>
                     </div>
                 </div>
             </div>

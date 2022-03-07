@@ -27,6 +27,9 @@
                 <div class="card-body">
                     <h5 class="card-title"><?= $pengaduan->judul; ?></h5>
                     <p class="card-text"><strong>Isi Laporan : </strong> <br> <?= $pengaduan->isi_laporan; ?></p>
+                    <?php if(!empty($pengaduan->lokasi)) : ?>
+                    <p class="card-text"><strong>Lokasi Kejadian : </strong><?= $pengaduan->lokasi; ?></p>
+                    <?php endif; ?>
                     <p class="card-text"><small class="text-muted">Oleh : <?= $pengaduan->nik_masyarakat; ?> || Pada Tanggal : <?= $pengaduan->tgl_pengaduan; ?></small></p>
                 </div>
                 </div>

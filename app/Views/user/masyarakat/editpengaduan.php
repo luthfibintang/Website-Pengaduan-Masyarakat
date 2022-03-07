@@ -28,7 +28,7 @@
             <input type="hidden" name="id" value="<?= user()->id; ?>">
             <input type="hidden" name="old-foto" value="<?= $pengaduan->foto ?>" >
             <div class="mb-3">
-                <div class="form-floating">
+                <div class="form-group">
                     <label for="floatingTextarea2">Judul</label>
                     <input type="text" name="judul" class="form-control <?= ($validation->hasError('judul'))? 'is-invalid' : ''; ?>" placeholder="" id="judul" value="<?= ($validation->hasError('judul')) ? old('judul') : $pengaduan->judul; ?>"></input>
                     <div class="invalid-feedback">
@@ -37,9 +37,18 @@
                 </div>
             </div>
             <div class="mb-3">
-                <div class="form-floating">
+                <div class="form-group">
                     <label for="floatingTextarea2">Isi laporan</label>
                     <textarea name="isi_laporan" class="form-control <?= ($validation->hasError('isi_laporan'))? 'is-invalid' : ''; ?>" placeholder="" id="floatingTextarea2" style="height: 100px"><?= ($validation->hasError('isi_laporan')) ? old('isi_laporan') : $pengaduan->isi_laporan; ?></textarea>
+                    <div class="invalid-feedback">
+                      <?= $validation->getError('isi_laporan'); ?>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="form-group">
+                    <label for="floatingTextarea2">lokasi</label>
+                    <input type="text" name="lokasi" class="form-control <?= ($validation->hasError('lokasi'))? 'is-invalid' : ''; ?>" placeholder="" id="lokasi" value="<?= ($validation->hasError('lokasi')) ? old('lokasi') : $pengaduan->lokasi; ?>"></input>
                     <div class="invalid-feedback">
                       <?= $validation->getError('isi_laporan'); ?>
                     </div>

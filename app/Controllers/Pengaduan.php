@@ -79,7 +79,7 @@ class Pengaduan extends BaseController
             'title' => 'Detail Pengaduan',
         ];
 
-        $this->builder->select('pengaduan.status, id_pengaduan, nik_masyarakat, isi_laporan, foto, userid, judul, tgl_pengaduan');
+        $this->builder->select('pengaduan.status, id_pengaduan, nik_masyarakat, isi_laporan, lokasi, foto, userid, judul, tgl_pengaduan');
         $this->builder->join('users', 'users.id = pengaduan.userid');
         $this->builder->where('id_pengaduan', $id);
         $this->query = $this->builder->get();
@@ -193,6 +193,7 @@ class Pengaduan extends BaseController
             'foto' => $namaprofile,
             'status' => '0',
             'id_kategori' => $k,
+            'lokasi' => $this->request->getVar('lokasi')
         ];
         if(empty($level)){
             $data['level'] = 'biasa';
@@ -231,7 +232,7 @@ class Pengaduan extends BaseController
     }
 
     public function editform($id) {
-        $this->builder->select('pengaduan.id_pengaduan, userid, judul, isi_laporan, foto, pengaduan.id_kategori, nama_kategori');
+        $this->builder->select('pengaduan.id_pengaduan, userid, judul, isi_laporan, lokasi, foto, pengaduan.id_kategori, nama_kategori');
         $this->builder->join('kategori', 'kategori.id_kategori = pengaduan.id_kategori');
         $this->builder->where('pengaduan.id_pengaduan', $id);
         $this->query = $this->builder->get();
@@ -310,7 +311,9 @@ class Pengaduan extends BaseController
             'judul' => $this->request->getVar('judul'),
             'isi_laporan' => $this->request->getVar('isi_laporan'),
             'foto' => $namaprofile,
-            'id_kategori' => $this->request->getVar('kategori') ];
+            'id_kategori' => $this->request->getVar('kategori'),
+            'lokasi' => $this->request->getVar('lokasi')
+        ];
         
             $this->builder->set($data);
             $this->builder->where('id_pengaduan', $id);
@@ -369,7 +372,7 @@ class Pengaduan extends BaseController
     public function verifikasi_detail($id){
 
         
-        $this->builder->select('pengaduan.status, id_pengaduan, nik_masyarakat, isi_laporan, foto, userid, judul, tgl_pengaduan, nama_kategori, level, pengaduan.id_kategori');
+        $this->builder->select('pengaduan.status, id_pengaduan, lokasi, nik_masyarakat, isi_laporan, foto, userid, judul, tgl_pengaduan, nama_kategori, level, pengaduan.id_kategori');
         $this->builder->join('kategori', 'kategori.id_kategori = pengaduan.id_kategori');
         $this->builder->where('id_pengaduan', $id);
         $this->query = $this->builder->get();

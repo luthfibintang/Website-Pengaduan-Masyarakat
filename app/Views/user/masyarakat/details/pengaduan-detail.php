@@ -32,6 +32,9 @@
                         <?php if($pengaduan[0]['status'] == 'tolak'){ echo "Pengaduan Ditolak";} ?>
                     </small></h5>
                     <p class="card-text"><?= $pengaduan[0]['isi_laporan']; ?></p>
+                    <?php if(!empty($pengaduan[0]['lokasi'])) : ?>
+                    <p class="card-text">Lokasi : <?= $pengaduan[0]['lokasi']; ?></p>
+                    <?php endif; ?>
                     <p class="card-text"><small class="text-muted">Tanggal Pengaduan : <?= $pengaduan[0]['tgl_pengaduan']; ?></small></p>
                 </div>
                 <img src="<?= base_url('/img/pengaduan' . '/' . $pengaduan[0]['foto']); ?>" class="card-img-bottom" style="width: 100%;" alt="...">

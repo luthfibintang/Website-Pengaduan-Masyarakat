@@ -30,7 +30,8 @@
                         <?php if($pengaduan->status == 'proses'){ echo "Sedang Diproses";} ?>
                         <?php if($pengaduan->status == 'selesai'){ echo "Sudah Ditanggapi";} ?>
                     </small></h5>
-                    <p class="card-text"><?= $pengaduan->isi_laporan; ?></p>
+                    <p class="card-text"><b>Isi Laporan : </b><br><?= $pengaduan->isi_laporan; ?></p>
+                    <p class="card-text"><b>Lokasi Kejadian :</b> <?= $pengaduan->lokasi; ?></p>
                     <p class="card-text"><small class="text-muted">Oleh : <?= $pengaduan->nik_masyarakat; ?> | <?= $pengaduan->tgl_pengaduan; ?></small></p>
                 </div>
                 <img src="<?= base_url('/img/pengaduan' . '/' . $pengaduan->foto); ?>" class="card-img-bottom" style="width: 100%;" alt="...">
@@ -68,7 +69,7 @@
                     <?php if($pengaduan->status == '0') : ?>
                         <button type="submit" name="tolak" class="btn btn-danger btn-sm mt-3 ml-3 mb-3">Tolak Pengaduan</button>
                         <button type="submit" name="submit" class="btn btn-success btn-sm mt-3 ml-3 mb-3">Verifikasi</button>
-                        <button type="submit" name="tanggap" class="btn btn-success btn-sm mt-3 ml-3 mb-3">Tanggapi</button>
+                        <button type="submit" name="tanggap" class="btn btn-primary btn-sm mt-3 ml-3 mb-3">Tanggapi</button>
                     <?php endif; ?>
                 </form>
             </div>

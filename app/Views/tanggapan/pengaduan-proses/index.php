@@ -60,11 +60,11 @@
                                 <label for="checkbox-all" class="custom-control-label">&nbsp;</label>
                               </div>
                             </th>
-                <th scope="col">No</th>
-                <th scope="col">Judul Pengaduan</th>
-                <th scope="col">Tanggal Pengaduan</th>
+                <th scope="col">Judul</th>
+                <th scope="col">Tanggal</th>
+                <th scope="col">Lokasi</th>
                 <th scope="col">Level</th>
-                <th scope="col">Status</th>
+                <!-- <th scope="col">Status</th> -->
                 <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -78,17 +78,17 @@
                         <label for="<?= $p['id_pengaduan']; ?>" class="custom-control-label">&nbsp;</label>
                     </div>
                 </td>
-                <td scope="row"><?= $i++; ?></td>
                 <td><?= $p['judul']; ?></td>
                 <td><?= $p['tgl_pengaduan']; ?></td>
+                <td><?= $p['lokasi']; ?></td>
                 <td <?php if($p['level'] == 'urgent'){echo 'style="color: red; font-weight:bold;"';}; ?>>
                     <?= $p['level']; ?>
                 </td>
-                <td>
+                <!-- <td>
                    <div class="badge badge-warning">
                     <?php if($p['status'] == 'proses'){ echo "Sedang Diproses";} ?>
                     </div>
-                </td>
+                </td> -->
                 <td>
                     <a class="btn btn-primary" href="<?= base_url('pengaduan/proses_detail/' . $p['id_pengaduan']); ?>">Detail</a>
                 </td>

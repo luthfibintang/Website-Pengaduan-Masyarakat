@@ -71,11 +71,11 @@
                                 <label for="checkbox-all" class="custom-control-label">&nbsp;</label>
                               </div>
                 </th>
-                <th class="text-center">No</th>
-                <th>Judul Pengaduan</th>
-                <th>Tanggal Pengaduan</th>
+                <th>Judul</th>
+                <th>Tanggal</th>
+                <th>Lokasi</th>
                 <th>Level</th>
-                <th>Status</th>
+                <!-- <th>Status</th> -->
                 <th>Action</th>
                 </tr>
             </thead>
@@ -90,13 +90,13 @@
                         <label for="<?= $p['id_pengaduan']; ?>" class="custom-control-label">&nbsp;</label>
                     </div>
                 </td>
-                <th scope="row"><?= $i++; ?></th>
                 <td><?= $p['judul']; ?></td>
                 <td><?= $p['tgl_pengaduan']; ?></td>
+                <td><?= $p['lokasi']; ?></td>
                 <td <?php if($p['level'] == 'urgent'){echo 'style="color: red; font-weight:bold;"';}; ?>>
                     <?= $p['level']; ?>
                 </td>
-                <td>
+                <!-- <td>
                 <div class="<?php if($p['status'] == 0){echo 'badge badge-danger';} elseif($p['status'] == 'verifikasi'){echo 'badge badge-primary';}elseif($p['status'] == 'proses'){echo 'badge badge-warning';}elseif($p['status'] == 'tolak'){echo 'badge badge-danger';}else{echo 'badge badge-success';} ?>">
                     <?php if($p['status'] == 0){ echo "Belum Diverifikasi";} ?>
                     <?php if($p['status'] == 'verifikasi'){ echo "Sudah Diverifikasi";} ?>
@@ -104,7 +104,7 @@
                     <?php if($p['status'] == 'selesai'){ echo "Sudah Ditanggapi";} ?>
                     <?php if($p['status'] == 'tolak'){ echo "Pengaduan Ditolak";} ?>
                 </div>
-                </td>
+                </td> -->
                 <td>
                     <a class="btn btn-primary" href="<?= base_url('pengaduan/verifikasi_detail/' . $p['id_pengaduan']); ?>">Detail</a>
                 </td>

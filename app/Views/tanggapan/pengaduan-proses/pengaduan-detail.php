@@ -29,8 +29,10 @@
                         <?php if($pengaduan->status == 'proses'){ echo "Sedang Diproses";} ?>
                         <?php if($pengaduan->status == 'selesai'){ echo "Sudah Ditanggapi";} ?>
                     </small></h5>
-                    <p class="card-text"><?= $pengaduan->isi_laporan; ?></p>
-                    <p class="card-text"><?= $pengaduan->nama_kategori; ?></p>
+                    <p class="card-text"><b>Isi Laporan :</b><br><?= $pengaduan->isi_laporan; ?></p>
+                    <?php if(!empty($pengaduan->lokasi)) : ?>
+                    <p class="card-text"><b>Lokasi Kejadian : </b><?= $pengaduan->lokasi; ?></p>
+                    <?php endif; ?>
                     <p class="card-text"><small class="text-muted">Oleh : <?= $pengaduan->nik_masyarakat; ?> | <?= $pengaduan->tgl_pengaduan; ?></small></p>
                 </div>
                 <img src="<?= base_url('/img/pengaduan' . '/' . $pengaduan->foto); ?>" class="card-img-bottom" style="width: 100%;" alt="...">

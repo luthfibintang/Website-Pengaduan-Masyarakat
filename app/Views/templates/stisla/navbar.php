@@ -10,8 +10,8 @@
           </a>
           <ul class="navbar-nav">
             <li class="nav-item active"><a href="#" class="nav-link">Information</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Something</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Something</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">News</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Tutorial</a></li>
           </ul>
         </div>
         <form class="form-inline ml-auto">
